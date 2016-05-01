@@ -1,6 +1,6 @@
 // @flow
 
-function timesFive (number) {
+function timesFive(number) {
   return number * 5
 }
 timesFive('1')
