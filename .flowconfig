@@ -1,0 +1,51 @@
+[version]
+0.24.0
+
+[ignore]
+# ignore problematic modules.
+
+[include]
+
+[libs]
+# defaults to flow-types/
+
+[options]
+# Ignore flow warning about not supporting decorator types fully yet.
+esproposal.decorators=ignore
+# Enable experimental features
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+
+module.use_strict=true
+
+# Provides an escape hatch to suppress flow type errors.
+# Example: `function foo(bar: $FlowFixMe) {...}`.
+suppress_type=$FlowFixMe
+
+# Provides a way to suppress flow errors in the following line.
+# Example: // $FlowSuppressError: This following line is borked because of reasons.
+suppress_comment= \\(.\\|\n\\)*\\$FlowSuppressError
+
+##
+# Maps all imports of these types to the npm package `empty`.
+# They will resolve as empty JS objects.
+# This is neccessary because flow tries to parese all imports and our
+# these imports can't be parsed.
+##
+module.name_mapper='.*\(.css\|.png\)' -> 'empty/object'
+# Cheat on the non-standard bang (!) import that webpack script loader uses.
+module.name_mapper='^.*!.*$' -> 'empty/object'
+
+# Map webpack resolved import to the app directory
+# Example: components/Foo -> `<project_root>/app/components/Foo`
+module.name_mapper='^actions\/\(.*\)$' -> '<PROJECT_ROOT>/app/actions/\1'
+module.name_mapper='^api\/\(.*\)$' -> '<PROJECT_ROOT>/app/api/\1'
+module.name_mapper='^components\/\(.*\)$' -> '<PROJECT_ROOT>/app/components/\1'
+module.name_mapper='^constants\/\(.*\)$' -> '<PROJECT_ROOT>/app/constants/\1'
+module.name_mapper='^containers\/\(.*\)$' -> '<PROJECT_ROOT>/app/containers/\1'
+module.name_mapper='^models\/\(.*\)$' -> '<PROJECT_ROOT>/app/models/\1'
+module.name_mapper='^reducers\/\(.*\)$' -> '<PROJECT_ROOT>/app/reducers/\1'
+module.name_mapper='^selectors\/\(.*\)$' -> '<PROJECT_ROOT>/app/selectors/\1'
+module.name_mapper='^store\/\(.*\)$' -> '<PROJECT_ROOT>/app/store/\1'
+module.name_mapper='^utils\/\(.*\)$' -> '<PROJECT_ROOT>/app/utils/\1'
+module.name_mapper='^assets\/\(.*\)$' -> '<PROJECT_ROOT>/app/assets/\1'
