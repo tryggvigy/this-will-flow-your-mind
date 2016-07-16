@@ -20,7 +20,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Getting a craving for a cup of ☕️ yet?</h1>
-        {/* $FlowSuppressError */}
+        {/* $FlowSuppressError: got `gif` required `png` og `jpg` */}
         <CoffeeImage format="gif"/>
       </div>
     )

@@ -17,24 +17,16 @@ class Button extends React.Component {
     visited: false,
   };
 
-  onMouseEnter = () => this.setState({
-    display: 'hover',
-  });
-
-  onMouseLeave = () => this.setState({
-    display: 'static',
-  });
-
-  onMouseDown = () => this.setState({
-    display: 'active',
-  });
-
   constructor(props) {
     super(props);
     this.state = {
       display: 'static',
     };
   }
+
+  onMouseEnter = () => this.setState({display: 'hover'});
+  onMouseLeave = () => this.setState({display: 'static'});
+  onMouseDown = () => this.setState({display: 'active'});
 
   render() {
     let className = 'button ' + this.state.display;
