@@ -1,3 +1,3 @@
 /* @flow */
 
-declare var ReactComponent: React$Component;
+declare var __DEV__: Boolean;
