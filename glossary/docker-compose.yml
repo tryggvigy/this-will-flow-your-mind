@@ -1,0 +1,49 @@
+version: '2'
+
+service:
+  api:
+    build: .
+    command: npm run dev
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/code
+      - api-deps:/code/node_modules
+
+volumes:
+  # No configs, uses default volume driver
+  api-deps:
+
+
+### CONNECTING SERVICES
+service:
+  api:
+    ...
+    links: db
+  db:
+    image: 'postgres:latest'
+    enviroment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=pw
+    volumes:
+      - /db
+    expose:
+      - 5432
+
+volumes:
+  # No configs, uses default volume driver
+  api-deps:
+
+
+
+### CONNECTING SERVICES
+service:
+  api:
+    ...
+    enviroment:
+      - VIRTUAL_HOST=api.tala.dev
+  proxy:
+    image: 'dockercloud/asdasd'
+    nadi ekki rest
+
+# webpack.config.js

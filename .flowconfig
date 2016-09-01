@@ -5,6 +5,7 @@
 
 [libs]
 # defaults to flow-types/
+node_modules/iflow-jquery/index.js.flow
 
 [options]
 # Ignore flow warning about not supporting decorator types fully yet.

@@ -1,0 +1,22 @@
+v1
+- PAUSE more between slides, pause for 1-2 sec once done with a slide.
+- record videos again while talking over them. Then repeating the same thing during talk.
+- Photos
+- talk about future?
+
+TODO
+- talk about size of team
+- compare commit activity graph with react.
+
+ps -ef | grep foo
+ELK log stack
+
+Remember to introduce myself and QuizUp.
+Remember to point people to online slides
+highlight stuff instead of pointing:
+  comparing commits to master,
+
+Use keypath getIn(['a', 'b']) in immutable example instead of get('a')
+
+eyecontact
+pause

@@ -17,12 +17,17 @@ class CoffeeImage extends React.Component {
   }
 }
 
+const CoffeeImageF = ({format}: {format: 'png' | 'jpg'}) =>
+  <img
+    src={`https://assets.imgix.net/unsplash/coffee.JPG?w=900&usm=10&fm=${format}&q=95`}
+  />
+
 function App() {
   return (
     <div>
       <h1>Getting a craving for a cup of ☕️ yet?</h1>
       {/* $FlowSuppressError: expected png or jpg, got gif */}
-      <CoffeeImage format={'gif'} />
+      <CoffeeImageF format={'gif'} />
     </div>
   )
 }
